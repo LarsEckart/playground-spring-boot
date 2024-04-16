@@ -2,7 +2,7 @@ package com.larseckart.spring;
 
 import static io.restassured.RestAssured.given;
 
-import io.restassured.response.Response;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,14 +17,18 @@ import org.testcontainers.utility.DockerImageName;
 class SpringApplicationTests {
 
   @ServiceConnection
-  PostgreSQLContainer<?> postgresContainer() {
-    return new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"))
-        .withUsername("postgres")
-        .withPassword("postgres");
-  }
+  static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(
+      DockerImageName.parse("postgres:latest"))
+      .withUsername("postgres")
+      .withPassword("postgres");
 
   @Autowired
   private Environment env;
+
+  @BeforeAll
+  static void setup() {
+    postgres.start();
+  }
 
   @Test
   void contextLoads() {
@@ -36,9 +40,9 @@ class SpringApplicationTests {
 
     given()
         .port(port)
-    .when()
+        .when()
         .get("/actuator/health")
-    .then()
+        .then()
         .statusCode(200);
   }
 }
