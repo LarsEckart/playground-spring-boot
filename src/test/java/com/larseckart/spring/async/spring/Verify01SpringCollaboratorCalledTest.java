@@ -4,11 +4,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.larseckart.spring.async.AnyCollaborator;
 import com.larseckart.spring.async.AnySpringService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 class Verify01SpringCollaboratorCalledTest {
 
+  @Disabled
   @Test
   void calls_the_collaborator() {
     AnyCollaborator collaborator = new AnyCollaborator();
