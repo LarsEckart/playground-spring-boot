@@ -1,4 +1,4 @@
-package com.larseckart.spring;
+package com.larseckart.spring.other;
 
 import net.ttddyy.dsproxy.listener.logging.SLF4JLogLevel;
 import net.ttddyy.dsproxy.support.ProxyDataSource;

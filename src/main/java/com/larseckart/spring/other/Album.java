@@ -1,32 +1,35 @@
-package com.larseckart.spring;
+package com.larseckart.spring.other;
 
 import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import java.util.List;
 import org.hibernate.annotations.Type;
 
 @Entity
-public class Song {
+public class Album {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    private Long length = 0L;
-
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
-    private Artist artist;
+    private CoverArt coverArt;
 
-    public Song(Long length, Artist artist) {
-        this.length = length;
-        this.artist = artist;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Song> songs;
+
+    public Album() {
     }
 
-    public Song() {
+    public Album(CoverArt coverArt, List<Song> songs) {
+        this.coverArt = coverArt;
+        this.songs = songs;
     }
-
 }

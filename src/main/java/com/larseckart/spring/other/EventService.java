@@ -1,4 +1,4 @@
-package com.larseckart.spring;
+package com.larseckart.spring.other;
 
 import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;

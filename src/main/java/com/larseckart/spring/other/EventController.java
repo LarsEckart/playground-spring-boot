@@ -1,4 +1,4 @@
-package com.larseckart.spring;
+package com.larseckart.spring.other;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

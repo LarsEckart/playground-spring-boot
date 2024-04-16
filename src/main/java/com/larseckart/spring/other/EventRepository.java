@@ -1,4 +1,4 @@
-package com.larseckart.spring;
+package com.larseckart.spring.other;
 
 import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;

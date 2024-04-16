@@ -1,5 +1,7 @@
 package com.larseckart.spring;
 
+import com.larseckart.spring.other.Event;
+import com.larseckart.spring.other.EventRepository;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.stream.IntStream;
