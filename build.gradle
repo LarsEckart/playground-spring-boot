@@ -24,7 +24,7 @@ dependencies {
   implementation("org.flywaydb:flyway-core")
   implementation("io.hypersistence:hypersistence-utils-hibernate-63:3.7.4")
   implementation("com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.16.1")
-  implementation("org.hibernate.orm:hibernate-core:6.4.4.Final")
+  implementation("org.hibernate.orm:hibernate-core:6.4.5.Final")
 
   implementation("com.google.guava:guava:33.1.0-jre")
 
