@@ -19,7 +19,7 @@ public class EventController {
   @ResponseBody
   String home() {
     service.saveEvent();
-    return "Hello World! " + name;
+    return "Hello " + name + "!";
   }
 
   @RequestMapping("/delete")
