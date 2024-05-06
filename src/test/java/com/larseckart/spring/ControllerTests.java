@@ -32,6 +32,6 @@ public class ControllerTests {
             .andReturn();
 
     String content = result.getResponse().getContentAsString();
-    assertThat(content).isEqualTo("Hello World! Lars");
+    assertThat(content).isEqualTo("Hello Lars!");
   }
 }
